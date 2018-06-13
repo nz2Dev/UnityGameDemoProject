@@ -4,16 +4,16 @@ using UnityEngine.AI;
 namespace Game.Characters.Controllers
 {
     [RequireComponent(typeof (NavMeshAgent))]
-    [RequireComponent(typeof (ThirdPersonCharacter))]
+    [RequireComponent(typeof (Character))]
     public class PathfindingCharacterControl : MonoBehaviour
     {
         Transform target;
         NavMeshAgent agent;
-        ThirdPersonCharacter character;
+        Character character;
 
         void Start()
         {
-            character = GetComponent<ThirdPersonCharacter>();
+            character = GetComponent<Character>();
 
             agent = GetComponent<NavMeshAgent>();
             agent.updateRotation = false;

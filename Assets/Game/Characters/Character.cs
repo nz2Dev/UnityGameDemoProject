@@ -4,7 +4,7 @@ namespace Game.Characters
 {
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(Animator))]
-	public class ThirdPersonCharacter : MonoBehaviour
+	public class Character : MonoBehaviour
 	{
 	    public readonly Vector3 GroundNormal = Vector3.up;
 
