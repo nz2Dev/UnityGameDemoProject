@@ -1,13 +1,19 @@
-﻿namespace Game.Inputs
+﻿using System;
+
+namespace Game.Inputs
 {
-    public abstract class Trigger
+    public class Trigger
     {
+        public Construction Construction { get; set; }
+        public object Context { get; set; }
+        public Action<Event> EventConsumer { get; set; }
 
-        public abstract void OnTrigger(Event triggeredEvent);
-
-        public abstract Construction GetConstruction();
-
-        public abstract object GetContext();
-
+        public virtual void OnTrigger(Event triggeredEvent)
+        {
+            if (EventConsumer != null)
+            {
+                EventConsumer.Invoke(triggeredEvent);
+            }
+        }
     }
 }

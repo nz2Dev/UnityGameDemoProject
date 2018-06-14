@@ -8,16 +8,16 @@ namespace Game.Inputs.Triggers
 {
     public class AbilityTriggersFactory
     {
-        public static AbilityTrigger Create(IAbility ability)
+        public static Trigger Create(IAbility ability)
         {
             if (ability is AttackAbility)
             {
                 var attackAbility = (AttackAbility) ability;
-                return new AbilityTrigger
+                return new Trigger
                 {
                     Construction = new TargetConstruction(),
                     Context = new MemberContext(),
-                    EventConverter = e => attackAbility.Attack(e.GameObject)
+                    EventConsumer = e => attackAbility.Attack(e.GameObject)
                 };
             }
 

@@ -8,15 +8,5 @@ namespace Game.Inputs.Triggers
         {
             throw new System.NotImplementedException();
         }
-
-        public override Construction GetConstruction()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override object GetContext()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
