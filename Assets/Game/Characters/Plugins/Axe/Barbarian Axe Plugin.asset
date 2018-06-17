@@ -14,4 +14,4 @@ MonoBehaviour:
   prefab: {fileID: 1567057534231348, guid: 99e1ede040e12ac4cb3ca456db11f254, type: 2}
   extraTransform: {fileID: 4512050043728316, guid: 3e437267761273b478ba9e244ad26524,
     type: 2}
-  part: 2
+  part: 3

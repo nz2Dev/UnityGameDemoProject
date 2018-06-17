@@ -14,5 +14,6 @@ MonoBehaviour:
   icon: {fileID: 0}
   description: Axe of death
   plugin: {fileID: 11400000, guid: bf411d326efd4204eb6c56b2bf7115b2, type: 2}
-  abilityConfig: {fileID: 11400000, guid: b0ec61a764611d149a8015a5d75e858b, type: 2}
+  configs:
+  - {fileID: 11400000, guid: 27c06c28ab0cb9149897419bbd094268, type: 2}
   slot: 0

@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7987f6cd0eca9d4bb82773c3a395314, type: 3}
   m_Name: AttackAbilityConfig.L1
   m_EditorClassIdentifier: 
+  attackRadius: 10
