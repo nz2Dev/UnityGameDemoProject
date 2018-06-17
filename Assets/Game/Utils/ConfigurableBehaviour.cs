@@ -9,7 +9,12 @@ namespace Game.Utils
         public MonoBehaviour SetConfig(TConfig configToSet)
         {
             config = configToSet;
+            OnConfigChanged(config);
             return this;
+        }
+
+        protected virtual void OnConfigChanged(TConfig config)
+        {
         }
 
         public TConfig GetConfig()

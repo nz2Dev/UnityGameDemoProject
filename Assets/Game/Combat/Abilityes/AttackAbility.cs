@@ -1,4 +1,6 @@
 ﻿using Game.Characters;
+using Game.Characters.Extensions;
+using Game.Characters.Plugins;
 using Game.Combat.Stats;
 using Game.Utils;
 using UnityEngine;
@@ -7,28 +9,33 @@ namespace Game.Combat.Abilityes
 {
     public class AttackAbility : ConfigurableBehaviour<AttackAbilityConfig>, IAbility
     {
-//        Character character;
-//        int damage;
+        Character character;
+        IWeapon weapon;
 
-        public void Attack(GameObject go)
+        void Start()
         {
-            print(gameObject.name + "Attack");
+            character = GetComponent<Character>();
 
-//            var health = go.GetComponent<Health>();
-//            health.TakeDamage(damage);
-
-//            var sword = character.GetEquipmentOn(Hand.Left) as Sword;
-//            sword.Attack(go.GetComponent<Character>().getHitArea());
+            weapon = character.GetComponentInChildren<IWeapon>();
+            if (weapon != null)
+            {
+                weapon.OnHitEvent += () =>
+                {
+                    // var health = go.GetComponent<Health>();
+                    // health.TakeDamage(damage);
+                };
+            }
         }
 
-        public void IncreaseDamage()
+        public void Attack(CombatMember combatMember)
         {
-//            damage += 10;
+            print(gameObject.name + "Attack");
+            weapon.PlayAttack(combatMember.GetComponent<Character>().FindPart(Part.HitArea));
         }
 
         public int GetAttackRadius()
         {
-            return 10;
+            return GetConfig().GetAttackRadius();
         }
     }
 }

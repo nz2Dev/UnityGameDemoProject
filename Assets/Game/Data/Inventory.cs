@@ -1,17 +1,32 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Game.Characters;
+using UnityEngine;
 
 namespace Game.Data
 {
-    public class Inventory : MonoBehaviour {
+    [RequireComponent(typeof(Character))]
+    public class Inventory : MonoBehaviour
+    {
+        [SerializeField] Item[] buildInItems = null;
 
-        // Use this for initialization
-        void Start () {
-		
+        List<Item> items = new List<Item>();
+
+        void Start()
+        {
+            foreach (var buildInItem in buildInItems)
+            {
+                AddItem(buildInItem);
+            }
         }
-	
-        // Update is called once per frame
-        void Update () {
-		
+
+        public void AddItem(Item item)
+        {
+            items.Add(item);
+        }
+
+        public IEnumerable<Item> GetItems()
+        {
+            return items;
         }
     }
 }

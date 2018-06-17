@@ -3,12 +3,19 @@ using UnityEngine;
 
 namespace Game.Combat.Abilityes
 {
-    [CreateAssetMenu(menuName = "Game/Ability/Attack")]
+    [CreateAssetMenu(menuName = "Ability/Attack")]
     public class AttackAbilityConfig : BehaviourConfig
     {
+        [SerializeField] int attackRadius = 10;
+
         public override MonoBehaviour AttachTo(GameObject gameObject)
         {
             return gameObject.AddComponent<AttackAbility>().SetConfig(this);
+        }
+
+        public int GetAttackRadius()
+        {
+            return attackRadius;
         }
     }
 }
