@@ -1,4 +1,6 @@
-﻿namespace Game.Inputs.Constructions {
-    internal class PointConstruction : Construction {
+﻿namespace Game.Inputs.Constructions
+{
+    public class PointConstruction : Construction
+    {
     }
 }

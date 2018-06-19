@@ -12,6 +12,11 @@ namespace Game.Inputs
             triggers.Add(trigger);
         }
 
+        public void Clear()
+        {
+            triggers.Clear();
+        }
+
         public IEnumerable<Trigger> GetTriggers()
         {
             return triggers;

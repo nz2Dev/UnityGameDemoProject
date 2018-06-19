@@ -10,6 +10,8 @@ namespace Game.Characters.Controllers
     {
         const string PathfindingTargetName = "PathfindingTarget";
 
+        public Sprite WalkIcon;
+
         Transform target;
         NavMeshAgent agent;
         Foots characterFoots;

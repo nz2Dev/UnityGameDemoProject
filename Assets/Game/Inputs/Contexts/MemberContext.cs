@@ -1,6 +1,10 @@
 ﻿namespace Game.Inputs.Contexts
 {
-    public class MemberContext
+    public class MemberContext : Context
     {
+        public MemberContext()
+        {
+            // TODO define layer
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game.Combat.Abilityes
 {
     [CreateAssetMenu(menuName = "Ability/Attack")]
-    public class AttackAbilityConfig : BehaviourConfig
+    public class AttackAbilityConfig : BaseAbilityConfig
     {
         [SerializeField] int attackRadius = 10;
 

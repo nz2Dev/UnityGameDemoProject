@@ -1,6 +1,12 @@
-﻿namespace Game.Inputs.Contexts {
-    internal class GroundContext {
-        public GroundContext() {
+﻿using Game.Utils;
+
+namespace Game.Inputs.Contexts
+{
+    public class GroundContext : Context
+    {
+        public GroundContext()
+        {
+            Layer = Layer.Walkable;
         }
     }
 }

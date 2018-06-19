@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc7df4dfa1b41e4389ffee25c6dc39b, type: 3}
+  m_Name: PointConstructionProcessorConfig
+  m_EditorClassIdentifier: 
+  pointGraphicPrefab: {fileID: 1739102366994226, guid: c73f3692b2f5d234f8b7f322b70c1539,
+    type: 2}
+  triggerKeyCode: 323
+  finishKeyCode: 323
+  pointerHight: 0.1

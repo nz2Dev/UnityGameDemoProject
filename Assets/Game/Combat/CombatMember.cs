@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game.Characters;
 using Game.Utils;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace Game.Combat
     [RequireComponent(typeof(Character))]
     public class CombatMember : MonoBehaviour
     {
+        public event Action OnStateChanged;
+
         [SerializeField] BehaviourConfig[] buildInConfigs = null;
 
         List<IAbility> abilityes = new List<IAbility>();
@@ -26,11 +29,20 @@ namespace Game.Combat
         {
             var ability = behaviourConfig.AttachTo(gameObject) as IAbility;
             abilityes.Add(ability);
+            NotifyStateChanged();
         }
 
         public IEnumerable<IAbility> GetAbilities()
         {
             return abilityes;
+        }
+
+        void NotifyStateChanged()
+        {
+            if (OnStateChanged != null)
+            {
+                OnStateChanged();
+            }
         }
     }
 }

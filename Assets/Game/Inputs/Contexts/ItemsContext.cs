@@ -1,9 +1,10 @@
 ﻿namespace Game.Inputs.Contexts
 {
-    internal class ItemsContext
+    public class ItemsContext : Context
     {
         public ItemsContext()
         {
+            // TODO define Layer
         }
     }
 }

@@ -15,12 +15,12 @@ namespace Game.Inputs.Triggers
                 var attackAbility = (AttackAbility) ability;
                 return new Trigger
                 {
-                    Construction = new TargetConstruction(),
                     Context = new MemberContext(),
+                    Construction = new TargetConstruction {Icon = attackAbility.GetConfig().GetIcon()},
                     EventConsumer = e => attackAbility.Attack(e.GameObject.GetComponent<CombatMember>())
                 };
             }
-            
+
             throw new RuntimeException("Can't create trigger for unknown ability: " + ability);
         }
     }
