@@ -16,10 +16,10 @@ namespace Game.UI.Triggers.Processors
         public void Init(Trigger trigger)
         {
             Trigger = trigger;
-            OnInit();
+            OnInitTrigger();
         }
 
-        protected virtual void OnInit()
+        protected virtual void OnInitTrigger()
         {            
         }
 
@@ -27,10 +27,18 @@ namespace Game.UI.Triggers.Processors
         {
         }
 
-        public abstract bool IsFinish(Activator activator);
+        public virtual bool IsFinish(Activator activator)
+        {
+            return activator.IsDeactivate();
+        }
 
         public virtual void Destroy()
         {
+        }
+
+        public T GetConstructionAs<T>() where T : Construction
+        {
+            return (T) Trigger.Construction;
         }
 
     }

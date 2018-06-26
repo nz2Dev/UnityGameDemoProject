@@ -19,7 +19,7 @@ namespace Game.Data.Items.Equipments
             return true;
         }
 
-        public bool Unequipe(Slot slot)
+        public bool Unequipe(EquipmentSlot equipmentSlot)
         {
             throw new NotImplementedException();
         }

@@ -8,4 +8,10 @@ namespace Game.Characters.Extensions
         event Action OnHitEvent;
         void PlayAttack(Transform transformTarget);
     }
+
+    public enum Attack {
+        Hands = 0,
+        Sword = 1,
+        Bow = 2
+    }
 }

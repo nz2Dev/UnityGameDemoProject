@@ -1,7 +1,6 @@
-﻿using Game.Characters;
-using Game.Characters.Graphics;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
+using Game.Actors.Plugins;
 
 namespace Game.Editor
 {

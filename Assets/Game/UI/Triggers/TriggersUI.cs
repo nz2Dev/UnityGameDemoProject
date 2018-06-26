@@ -13,8 +13,14 @@ namespace Game.UI.Triggers
         [SerializeField] Activator[] activators = null;
         ConstructionProcessorsFactory factory;
 
+        Trigger lastTrigger = null;
         Activator currentActivator = null;
         IConstructionProcessor currentProcessor = null;
+
+        public TriggersHost CurrentHost
+        {
+            get { return triggersHost; }
+        }
 
         void Start()
         {
@@ -31,6 +37,10 @@ namespace Game.UI.Triggers
                 if (active != null)
                 {
                     var currentTrigger = active.AssignedTrigger;
+                    if (lastTrigger != null)
+                    {
+                        lastTrigger.Unfocus();
+                    }
 
                     currentProcessor = factory.CreateConstructionProcessor(this, currentTrigger.Construction);
                     currentProcessor.Init(currentTrigger);
@@ -43,6 +53,7 @@ namespace Game.UI.Triggers
                 currentProcessor.UpdateProcessor();
                 if (currentProcessor.IsFinish(currentActivator))
                 {
+                    lastTrigger = currentActivator.AssignedTrigger;
                     currentProcessor.Destroy();
                     currentProcessor = null;
                     currentActivator = null;

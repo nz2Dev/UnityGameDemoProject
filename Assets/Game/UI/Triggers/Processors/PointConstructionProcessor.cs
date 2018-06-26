@@ -9,7 +9,7 @@ namespace Game.UI.Triggers.Processors
     {
         GameObject indicator;
 
-        protected override void OnInit()
+        protected override void OnInitTrigger()
         {
             indicator = Instantiate(Config.GetPointGraphicPrefab());
             SetIndicatorPosition();
@@ -46,7 +46,6 @@ namespace Game.UI.Triggers.Processors
             var position = CameraHelper.WalkablePoint();
             if (!position.Equals(Vector3.negativeInfinity))
             {
-                position.y = Config.GetPointerHight();
                 indicator.transform.position = position;
             }
         }

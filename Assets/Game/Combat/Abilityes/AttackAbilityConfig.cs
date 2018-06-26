@@ -7,15 +7,22 @@ namespace Game.Combat.Abilityes
     public class AttackAbilityConfig : BaseAbilityConfig
     {
         [SerializeField] int attackRadius = 10;
+        [SerializeField] float timeBetweenAttack = 1f;
 
         public override MonoBehaviour AttachTo(GameObject gameObject)
         {
             return gameObject.AddComponent<AttackAbility>().SetConfig(this);
         }
 
-        public int GetAttackRadius()
+        public int AttackRadius {
+            get {
+                return attackRadius;
+            }
+        }
+
+        public float TimeBetweenAttack
         {
-            return attackRadius;
+            get { return timeBetweenAttack; }
         }
     }
 }

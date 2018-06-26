@@ -2,6 +2,6 @@
 {
     public class TargetConstruction : Construction
     {
-        int radius;
+        public int Radius { get; set; }
     }
 }

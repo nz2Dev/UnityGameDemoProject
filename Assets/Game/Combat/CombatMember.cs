@@ -32,6 +32,14 @@ namespace Game.Combat
             NotifyStateChanged();
         }
 
+        public void StopAllAbility()
+        {
+            foreach (var ability in GetAbilities())
+            {
+                ability.Stop();
+            }
+        }
+
         public IEnumerable<IAbility> GetAbilities()
         {
             return abilityes;

@@ -3,6 +3,6 @@
     public class Equipment
     {
         public EquipmentableItem Item;
-        public Slot Slot;
+        public EquipmentSlot EquipmentSlot;
     }
 }

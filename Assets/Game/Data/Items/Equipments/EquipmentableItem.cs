@@ -1,4 +1,5 @@
-﻿using Game.Characters;
+﻿using Game.Actors;
+using Game.Characters;
 using Game.Combat;
 using Game.Utils;
 using UnityEngine;
@@ -10,11 +11,11 @@ namespace Game.Data.Items.Equipments
     {
         [SerializeField] Plugin plugin = null;
         [SerializeField] BehaviourConfig[] configs = null;
-        [SerializeField] Slot slot = Slot.Body;
+        [SerializeField] EquipmentSlot equipmentSlot = EquipmentSlot.Body;
 
         public override void UseFor(GameObject gameObject)
         {
-            var equipment = new Equipment { Item = this, Slot = slot };
+            var equipment = new Equipment { Item = this, EquipmentSlot = equipmentSlot };
 
             var eqAvatar = gameObject.GetComponent<EquipmentAvatar>();
             if (eqAvatar.Equipe(equipment))

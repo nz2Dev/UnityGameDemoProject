@@ -1,13 +1,11 @@
 ﻿using Game.Characters;
 using Game.Characters.Extensions;
-using Game.Characters.Extensions.Body;
-using Game.Characters.Extensions.Moves;
 using Game.Utils;
 using UnityEngine;
 
 namespace Game.Combat.Abilityes
 {
-    public class TeleportAbility : ConfigurableBehaviour<TeleportAbilityConfig>, IAbility
+    public class TeleportAbility : BaseAbility<TeleportAbilityConfig>
     {
         Teleporter teleporter;
 

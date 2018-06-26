@@ -1,7 +1,5 @@
 ﻿using Game.Characters;
-using Game.Characters.Controllers;
 using Game.Characters.Extensions;
-using Game.Characters.Extensions.Body;
 using Game.Data;
 using Game.Maining.Tools;
 using Game.Utils;
@@ -28,7 +26,7 @@ namespace Game.Maining.Actions
         {
             target = tree;
 
-            var pathfinder = character.GetComponent<PathfindingFootsController>();
+            var pathfinder = character.GetComponent<HumanoidPathfinder>();
             pathfinder.Walk(tree.transform.position);
         }
 

@@ -7,9 +7,9 @@ namespace Game.Combat.Abilityes
     {
         [SerializeField] Sprite icon = null;
 
-        public Sprite GetIcon()
+        public Sprite Icon
         {
-            return icon;
+            get { return icon; }
         }
     }
 }

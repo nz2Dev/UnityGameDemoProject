@@ -6,9 +6,15 @@ namespace Game.Utils
 {
     public class CameraUtils
     {
-        public static TResult RaycastOnlyType<TResult>(LayerMask layerMask) where TResult : class {
+        public static TResult RaycastOnlyType<TResult>(LayerMask layerMask) where TResult : Component
+        {
+            return (TResult) RaycastOnlyType(typeof(TResult), layerMask);
+        }
+
+        public static Component RaycastOnlyType(Type type, LayerMask layerMask)
+        {
             var hit = HitLayer(layerMask);
-            return hit.HasValue ? hit.Value.collider.GetComponent<TResult>() : null;
+            return hit.HasValue ? hit.Value.collider.GetComponent(type) : null;
         }
 
         public static RaycastHit? HitLayer(LayerMask layerMask)

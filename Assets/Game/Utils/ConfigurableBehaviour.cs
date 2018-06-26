@@ -4,22 +4,17 @@ namespace Game.Utils
 {
     public class ConfigurableBehaviour<TConfig> : MonoBehaviour where TConfig : BehaviourConfig
     {
-        TConfig config;
+        public TConfig Config { get; private set; }
 
         public MonoBehaviour SetConfig(TConfig configToSet)
         {
-            config = configToSet;
-            OnConfigChanged(config);
+            Config = configToSet;
+            OnConfigChanged(Config);
             return this;
         }
 
         protected virtual void OnConfigChanged(TConfig config)
         {
-        }
-
-        public TConfig GetConfig()
-        {
-            return config;
         }
     }
 }

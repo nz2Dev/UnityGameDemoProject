@@ -1,10 +1,13 @@
-﻿namespace Game.Inputs.Contexts
+﻿using Game.Combat;
+
+namespace Game.Inputs.Contexts
 {
     public class MemberContext : Context
     {
         public MemberContext()
         {
-            // TODO define layer
+            Layer = Utils.Layer.Combat;
+            Type = typeof(CombatMember);
         }
     }
 }

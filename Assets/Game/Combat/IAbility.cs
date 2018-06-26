@@ -4,6 +4,6 @@ namespace Game.Combat
 {
     public interface IAbility
     {
-
+        void Stop();
     }
 }

@@ -11,7 +11,12 @@ namespace Game.Characters
         public event Action<AnimationEvent> AnimationEvent;
 
         Animator animator;
-        
+
+        public void PostEvent()
+        {
+            // 
+        }
+
         void Start()
         {
             animator = GetComponent<Animator>();

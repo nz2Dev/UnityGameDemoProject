@@ -16,8 +16,13 @@ namespace Game.Inputs.Triggers
                 return new Trigger
                 {
                     Context = new MemberContext(),
-                    Construction = new TargetConstruction {Icon = attackAbility.GetConfig().GetIcon()},
-                    EventConsumer = e => attackAbility.Attack(e.GameObject.GetComponent<CombatMember>())
+                    Construction = new TargetConstruction
+                    {
+                        Icon = attackAbility.Config.Icon,
+                        Radius = attackAbility.Config.AttackRadius
+                    },
+                    EventConsumer = e => attackAbility.Attack(e.GameObject.GetComponent<CombatMember>()),
+                    UnfocusConsumer = () => attackAbility.Stop()
                 };
             }
 

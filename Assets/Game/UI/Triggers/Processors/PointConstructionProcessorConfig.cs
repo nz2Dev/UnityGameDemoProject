@@ -10,7 +10,6 @@ namespace Game.UI.Triggers.Processors
         [SerializeField] GameObject pointGraphicPrefab = null;
         [SerializeField] KeyCode triggerKeyCode = KeyCode.Mouse0;
         [SerializeField] KeyCode finishKeyCode = KeyCode.Mouse0;
-        [SerializeField] float pointerHight = 0.1f;
 
         public override bool IsProcess(Construction abilityConstruction)
         {
@@ -37,11 +36,6 @@ namespace Game.UI.Triggers.Processors
         public KeyCode GetFinishKeyCode()
         {
             return finishKeyCode;
-        }
-
-        public float GetPointerHight()
-        {
-            return pointerHight;
         }
     }
 }
