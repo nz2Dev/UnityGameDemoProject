@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: AttackAbilityConfig.L1
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 439f65e1d51437b4ebec3c8788f2cc95, type: 3}
-  attackRadius: 10
+  attackRadius: 2
+  timeBetweenAttack: 1
